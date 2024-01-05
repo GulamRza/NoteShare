@@ -6,13 +6,16 @@ function page() {
 
   const [ email, setEmail ] = useState("");
   const [ name, setName ] = useState("");
+  const [ password, setPassword ] = useState("");
   const router = useRouter();
 
   async function handleSubmit(e){
 
     e.preventDefault();
+
+
     const res = await fetch("/api/register", {
-      body : JSON.stringify({ email, name }),
+      body : JSON.stringify({ email, name, password }),
       method : "POST",
       headers : { "Content-Type": "application/json"}
     });
@@ -37,9 +40,12 @@ function page() {
             
             <label htmlFor="name">Name</label>
             <input className='form-input' type="text" name="name" required value={name} onChange={(e) => {setName(e.target.value)}} />
+            
+            <label htmlFor="passoword">Password</label>
+            <input className='form-input' type="password" name="password" required value={password} onChange={(e) => {setPassword(e.target.value)}} />
 
             <button onClick={(e) => {handleSubmit(e)}} className='bg-slate-700'>Register</button>
-            <button>Sign In</button>
+            <button><a href="/api/auth/signin">Sign In</a></button>
         </form>
     </div>
   )
