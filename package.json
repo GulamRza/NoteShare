@@ -21,6 +21,7 @@
     "react-quill": "^2.0.0"
   },
   "devDependencies": {
+    "@prisma/nextjs-monorepo-workaround-plugin": "^5.7.1",
     "@types/node": "20.10.6",
     "@types/react": "18.2.46",
     "autoprefixer": "^10.0.1",
