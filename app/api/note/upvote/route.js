@@ -3,7 +3,7 @@ import prisma from "@/prisma/prismaClient";
 
 export async function GET(req){
 
-    const id = parseInt(new URL(req.url).searchParams.get("id")) || -1;
+    const id = new URL(req.url).searchParams.get("id");
     const note = await prisma.note.findUnique({
         where : {
             id : id
@@ -28,7 +28,7 @@ export async function GET(req){
 }
 
 export async function POST(req){
-    const id = parseInt(new URL(req.url).searchParams.get("id")) || -1;
+    const id = new URL(req.url).searchParams.get("id");
     const note = await prisma.note.update({
         where : {
             id : id
