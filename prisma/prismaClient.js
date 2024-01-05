@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from '@/prisma/generated/client'
 
 // See here: https://github.com/prisma/prisma-client-js/issues/228#issuecomment-618433162
 let prisma
