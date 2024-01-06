@@ -8,12 +8,12 @@ function NavBar() {
   const {data : session} = useSession();
 
   return (
-    <div className='w-full flex items-center justify-between p-3 px-10 border-b-[0.5px] border-gray-600'>
+    <div className='flex items-center justify-between p-3 px-10 border-b-[0.5px] border-gray-600'>
         <div><a href='/'>NoteShare</a></div>
         <div>
         {session ? (
-          <div className='flex gap-x-5 flex items-center'>
-            <div className='flex items-center px-3 bg-gray-800 text-gray-300 rounded-2xl'>
+          <div className='flex gap-x-5 items-center'>
+            <div className='flex items-center px-3 bg-gray-800 text-gray-300 rounded-2xl hidden'>
                 <BiSearch />
               <input type="text" className='p-1 bg-transparent focus:outline-none' />
             </div>

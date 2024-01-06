@@ -31,7 +31,6 @@ export async function POST(res){
 }
 
 
-
 export async function GET(res){
     const notes = await prisma.note.findMany({
         where : {

@@ -3,8 +3,8 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div className='w-full h-[350px] p-4 flex justify-between p-3 px-10 border-t-[0.5px] border-gray-600'>
-        <div className='border-r-[0.5px] border-gray-800 p-4 w-[30%] flex flex-col gap-4 text-gray-600'>
+    <div className='w-full flex flex-col justify-between p-3 px-10 '>
+        <div className=' p-4 flex flex-col gap-4 text-gray-600'>
             <a href='/' className='text-3xl font-bold '>NoteShare</a>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias quod dicta delectus cupiditate placeat, non aperiam est eius adipisci quos?</p>
             <p>Here's What you can do</p>
@@ -14,10 +14,10 @@ function Footer() {
                 <li>Discuss Your Views</li>
             </ul>
         </div>        
-        <div className='border-r-[0.5px] border-gray-800 p-4 w-[30%]'>
+        <div className=''>
 
         </div>        
-        <div className='p-4 w-[30%] flex flex-col gap-4'>
+        <div className='flex flex-col gap-4'>
             <a href='/about-dev' className='text-3xl font-bold text-gray-600'>About Dev</a>
             <p className='text-gray-600'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias quod dicta delectus cupiditate placeat, non aperiam est eius adipisci quos?</p>
             <ul className='text-gray-600'>

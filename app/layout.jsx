@@ -16,7 +16,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <main>
+        <main className='min-h-screen'>
           <Provider session={session}> 
             {children}
           </Provider>

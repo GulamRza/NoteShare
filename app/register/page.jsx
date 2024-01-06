@@ -32,9 +32,9 @@ function page() {
   }
 
   return (
-    <div className='bg-gray-900 w-screen h-screen flex flex-col justify-center items-center'>
+    <div className='px-4 bg-gray-900 w-screen h-screen flex flex-col justify-center items-center'>
         <form action="/api/register" method='POST'
-            className='p-8 w-[400px] bg-slate-950 rounded-3xl flex flex-col' >
+            className='p-8 min-w-[350px] bg-slate-950 rounded-3xl flex flex-col' >
             <label htmlFor="Email">Email</label>
             <input className="form-input" type="email" name='email' required value={email} onChange={(e) => {setEmail(e.target.value)}} />
             

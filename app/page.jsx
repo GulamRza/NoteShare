@@ -14,7 +14,7 @@ export default function Home() {
   const [notes, setNotes] = useState([]);
 
   async function fetchNotes(){
-    const res = await fetch("api/note");
+    const res = await fetch("/api/note");
     if(res.status == 201){
       const data = await res.json();
       setNotes(data.notes);
@@ -29,20 +29,17 @@ export default function Home() {
     <>
       <NavBar />
       { session ? (
-      <div className="p-3 min-h-screen">
-        <div>
-          
-        </div>
-        <div className="flex">
-          <div className="w-[30%] bg-gray-900 m-2 rounded-lg">
+      <div className="min-h-screen">
+        <div className="flex gap-2 lg:p-4">
+          <div className="bg-gray-800 rounded-lg hidden lg:flex lg:w-[30%]">
 
           </div>
-          <div className="w-[70%] min-w-[600px]">
+          <div className="lg:w-[70%] p-2">
             {notes.map( note => (
               <NoteCard key={note.id} note={note} />
             ))}
           </div>
-          <div className="p-2 w-14 bg-gray-800 m-2 rounded-lg flex flex-col gap-2">
+          <div className="p-2 w-14 bg-gray-800 rounded-lg hidden lg:flex flex-col gap-2">
             <div className="p-4 bg-gray-900 rounded"></div>
             <div className="p-4 bg-gray-900 rounded"></div>
             <div className="p-4 bg-gray-900 rounded"></div>

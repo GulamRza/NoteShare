@@ -22,9 +22,9 @@ function NoteCard({ note }) {
 
 
   return (
-    <div className="p-5 rounded-lg bg-gray-900 my-2 mx-2">
+    <div className="p-5 rounded-lg bg-gray-900 mb-3">
       <div className='flex justify-between items-end'>
-        <h1 className="text-3xl">{cNote.title}</h1>
+        <h1 className="text-3xl"><a href={`/note/${note.id}`}>{cNote.title}</a></h1>
         <p className='text-gray-500'>by {cNote.writer.username}</p>
       </div>
       <div className='h-[0.5px] w-full bg-gray-700 my-2'></div>
