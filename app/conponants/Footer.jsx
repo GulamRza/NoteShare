@@ -3,8 +3,8 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div className='w-full flex flex-col justify-between p-3 px-10 '>
-        <div className=' p-4 flex flex-col gap-4 text-gray-600'>
+    <div className='w-full flex flex-col lg:flex-row justify-between p-4 px-10 gap-4 border-t-[0.5px] border-gray-800 '>
+        <div className=' flex flex-col gap-4 text-gray-600'>
             <a href='/' className='text-3xl font-bold '>NoteShare</a>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias quod dicta delectus cupiditate placeat, non aperiam est eius adipisci quos?</p>
             <p>Here's What you can do</p>
@@ -23,7 +23,7 @@ function Footer() {
             <ul className='text-gray-600'>
                 <li> - Gulam Raza</li>
                 <li> - Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, expedita?</li>
-                <li className='flex w-full justify-around p-3 '>
+                <li className='flex w-full justify-center gap-3 p-3 '>
                     <a href="" className='p-2 px-4 bg-gray-800 rounded-full'>A</a>
                     <a href="" className='p-2 px-4 bg-gray-800 rounded-full'>B</a>
                     <a href="" className='p-2 px-4 bg-gray-800 rounded-full'>C</a>

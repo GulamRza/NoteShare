@@ -34,7 +34,7 @@ export default function Home() {
           <div className="bg-gray-800 rounded-lg hidden lg:flex lg:w-[30%]">
 
           </div>
-          <div className="lg:w-[70%] p-2">
+          <div className="lg:w-[70%] p-2 lg:py-0">
             {notes.map( note => (
               <NoteCard key={note.id} note={note} />
             ))}

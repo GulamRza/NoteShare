@@ -2,6 +2,8 @@
 import React, { useState } from 'react'
 import parse from 'html-react-parser';
 import { BiUpvote, BiDownvote, BiShare, BiComment, BiSave } from "react-icons/bi";
+import { RWebShare } from "react-web-share"; 
+
 
 function NoteCard({ note }) {
   const [ cNote, setCNote ] = useState(note);
@@ -23,7 +25,7 @@ function NoteCard({ note }) {
 
   return (
     <div className="p-5 rounded-lg bg-gray-900 mb-3">
-      <div className='flex justify-between items-end'>
+      <div className='flex justify-between flex-col lg:flex-row'>
         <h1 className="text-3xl"><a href={`/note/${note.id}`}>{cNote.title}</a></h1>
         <p className='text-gray-500'>by {cNote.writer.username}</p>
       </div>
@@ -41,7 +43,17 @@ function NoteCard({ note }) {
           <a onClick={devote}><BiDownvote /></a> {cNote.downvotes}
           </div>
           <div className='flex items-center gap-2'>
-          <a><BiShare /></a> {cNote.shareCount}
+            <RWebShare 
+              className="cursor-pointer"
+              data={{ 
+                text: `NoteShare - ${cNote.title}`, 
+                url: `/note/${cNote.id}`, 
+                title: cNote.title, 
+              }} 
+              onClick={() => console.log("shared successfully!")} 
+            ><BiShare /> 
+            </RWebShare>
+            {cNote.shareCount}
           </div>
         </div>
         <div className='flex gap-6'>

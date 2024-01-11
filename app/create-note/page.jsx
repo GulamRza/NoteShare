@@ -12,6 +12,7 @@ function page() {
   const [value, setValue] = useState('');
   const { data : session } = useSession();
   const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
   async function handleSubmit(){
     const res = await fetch('/api/note', {
@@ -41,6 +42,7 @@ function page() {
           <NavBar />
           <div className='p-5'>
             <input className='w-full form-input' type="text" placeholder='Title' value={title} onChange={(e) => {setTitle(e.target.value)}} />
+            <input className='w-full form-input' type="text" placeholder='Description' value={description} onChange={(e) => {setDescription(e.target.value)}} />
             <ReactQuill value={value} onChange={setValue}/>
             <button onClick={handleSubmit}>Share</button>
           </div>
