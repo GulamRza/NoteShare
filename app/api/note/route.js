@@ -2,6 +2,7 @@ import prisma from "@/prisma/prismaClient";
 
 
 export async function POST(res){
+    
     const { title, content, email } = await res.json();
 
     if (title != "" && content != "" && email){
@@ -31,8 +32,13 @@ export async function POST(res){
 }
 
 
-export async function GET(res){
+export async function GET(req){
+    const skip = parseInt(new URL(req.url).searchParams.get("skip"));
+    const take = parseInt(new URL(req.url).searchParams.get("take"));
+    
     const notes = await prisma.note.findMany({
+        skip : skip || 0,
+        take : take || 5,
         where : {
             published : true
         },

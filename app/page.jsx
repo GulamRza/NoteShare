@@ -12,12 +12,25 @@ export default function Home() {
   const { data : session } = useSession();
 
   const [notes, setNotes] = useState([]);
+  const [noMoreNotes, setNoMoreNotes] = useState(false);
 
   async function fetchNotes(){
     const res = await fetch("/api/note");
     if(res.status == 201){
       const data = await res.json();
       setNotes(data.notes);
+    }
+  }
+
+  async function loadMoreNotes(){
+    const res = await fetch(`/api/note?skip=${notes.length}&take=${5}`);
+    if(res.status == 201){
+      const data = await res.json();
+      console.log(data.notes);
+      setNotes([...notes, ...data.notes]);
+      if(data.notes.length < 5){
+        setNoMoreNotes(true);
+      }
     }
   }
   
@@ -38,6 +51,7 @@ export default function Home() {
             {notes.map( note => (
               <NoteCard key={note.id} note={note} />
             ))}
+            { !noMoreNotes && <button onClick={loadMoreNotes}>Load More</button>}
           </div>
           <div className="p-2 w-14 bg-gray-800 rounded-lg hidden lg:flex flex-col gap-2">
             <div className="p-4 bg-gray-900 rounded"></div>

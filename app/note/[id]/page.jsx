@@ -2,6 +2,7 @@
 import NavBar from '@/app/conponants/NavBar'
 import React, { useEffect, useState } from 'react'
 import parse from 'html-react-parser';
+import Comment from '@/app/conponants/Comment';
 
 function page({ params }) {
 
@@ -35,6 +36,14 @@ function page({ params }) {
             </div>
             <div className='page-break'></div>
             <div className='text-gray-300 px-5'>{parse(note.content || "")}</div>
+            <div className='page-break'></div>
+            <div>
+              Comments <p className='text-gray-700 inline px-2'>{34}</p>
+              <Comment data={{
+                by : "sajid",
+                value : "I have found this useful"
+              }} />
+            </div>
             <div className='p-10 flex justify-center gap-5'>
                 <button>Did you find it useful?</button>
             </div>
