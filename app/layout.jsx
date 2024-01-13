@@ -17,6 +17,7 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <meta name="google-site-verification" content="nrd0FgHTQn-22iR8nvMYew7zhsLStdhZMWypdvWC6po" />
       <body>
         <main className='min-h-screen'>
           <Provider session={session}> 
