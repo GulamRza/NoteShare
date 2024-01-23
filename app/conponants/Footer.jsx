@@ -1,4 +1,5 @@
 import React from 'react'
+import { BiLogoInstagram, BiLogoGithub, BiLogoLinkedinSquare, BiSolidNetworkChart, BiNetworkChart } from "react-icons/bi";
 
 
 function Footer() {
@@ -24,10 +25,10 @@ function Footer() {
                 <li> - Gulam Raza</li>
                 <li> - Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, expedita?</li>
                 <li className='flex w-full justify-center gap-3 p-3 '>
-                    <a href="" className='p-2 px-4 bg-gray-800 rounded-full'>A</a>
-                    <a href="" className='p-2 px-4 bg-gray-800 rounded-full'>B</a>
-                    <a href="" className='p-2 px-4 bg-gray-800 rounded-full'>C</a>
-                    <a href="" className='p-2 px-4 bg-gray-800 rounded-full'>D</a>
+                    <a href="" className='text-2xl p-2 bg-gray-800 rounded-full'><BiLogoGithub /></a>
+                    <a href="" className='p-2 text-2xl bg-gray-800 rounded-full'><BiLogoInstagram /></a>
+                    <a href="" className='p-2 text-2xl bg-gray-800 rounded-full'><BiLogoLinkedinSquare /></a>
+                    <a href="" className='p-2 text-2xl bg-gray-800 rounded-full'><BiNetworkChart /></a>
                 </li>
             </ul>
         </div>        
