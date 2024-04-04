@@ -4,7 +4,7 @@ import { BiCommentEdit } from "react-icons/bi";
 import { useSession } from 'next-auth/react';
 
 
-function Comment({ data, id }) {
+function Comment({ data, id, index }) {
 
   const [replies, setReplies] = useState([]);
   const [replying, setReplying] = useState(false);
@@ -50,7 +50,7 @@ function Comment({ data, id }) {
 
 
   return (
-    <div className='pl-5'>
+    <div className={`bg-gray-${(index % 2 ? 900 : 800)} p-2 border border-gray-700`}>
       <div className='flex items-center gap-2'>
         <p className='text-gray-500'>{data.writtenBy} </p>
         <span onClick={loadReplies} className='cursor-pointer'>{data._count.replies}</span>
@@ -58,7 +58,6 @@ function Comment({ data, id }) {
 
       </div>
       <p className='pl-5'>{data.value}</p>
-      <br />
 
       {/* Show the input field only when user want to reply */}
       {replying && <>
@@ -67,9 +66,9 @@ function Comment({ data, id }) {
       </>}
 
       {/*  */}
-      {replies.length > 0 && replies.map(reply => (
-        <div key={reply.id} className='pl-5'>
-          <Comment id={reply.id} data={reply} />
+      {replies.length > 0 && replies.map((reply, i) => (
+        <div key={reply.id} className='pl-10'>
+          <Comment id={reply.id} data={reply} index={index + i + 1} />
         </div>
       ))}
     </div>

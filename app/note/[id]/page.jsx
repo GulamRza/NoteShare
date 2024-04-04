@@ -86,8 +86,8 @@ function page({ params }) {
                 <input type="text" name="comment-input" value={commentInput} onChange={(e) => {setCommentInput(e.target.value)}} className='bg-transparent rounded border border-gray-300' />
                 <button onClick={submitComment}>Comment</button>
               </div>
-              {comments.map(comment => (
-                <Comment key={comment.id} id={comment.id} data={comment} />
+              {comments.map((comment, index) => (
+                <Comment key={comment.id} id={comment.id} data={comment} index={index + 1} />
               ))}
             </div>
             <div className='p-10 flex justify-center gap-5'>
